@@ -1,0 +1,89 @@
+@import "../../App.scss";
+
+.feature{
+    height: 90vh;
+    position: relative;
+
+    //these image refer to image under feature
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .category{
+        position: absolute;
+        top: 80px;
+        left: 50px;
+        font-size: 30px;
+        font-weight: 500;
+        color: #fff;
+        display: flex;
+        align-items: center;
+
+        select{
+            cursor: pointer;
+            background-color: #0b0b0b;
+            border: 1px solid #fff;
+            color: #fff;
+            margin-left: 20px;
+            padding: 5px;
+
+        }
+    }
+
+    .infos{
+        width: 35%;
+        position: absolute;
+        left: 50px;
+        bottom: 100px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        img{
+            width: 400px;
+        }
+
+        .sp{
+            margin: 20px 0px;
+            font-size: 16px;
+            @include mobile{
+               width: 40vw
+            }
+        }
+
+        .buttons{
+            display: flex;
+              button{
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 500;
+                margin: 10px;
+                cursor: pointer;
+
+                &play{
+                    background-color: #fff;
+                    color: #0b0b0b;
+                }
+
+                &more{
+                    background-color: grey;
+                    color: #fff;
+                }
+
+                span{
+                    margin-left: 5px;
+                }
+
+              }
+        }
+
+    }
+
+
+}

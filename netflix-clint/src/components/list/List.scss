@@ -1,0 +1,49 @@
+.list{
+    width: 100%;
+    margin-top: 10px;
+
+    .listTitle{
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 50px;
+    }
+
+    .wrapper{
+        position: relative;
+
+        
+        .siderArrow{
+            width: 50px;
+            height: 100%;
+            background-color: rgb(86, 81, 81, 0.5);
+            color: #fff;
+            position: absolute;
+            //to fixed postion
+            z-index: 99;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
+
+            &.left{
+                left: 2
+            }
+    
+            &.right{
+                right: 0;
+            }
+    
+        }
+
+        .container{
+            margin-left: 50px;
+            margin-top: 10px;
+            display: flex;
+            width: max-content;
+            transform: translate(0px);
+            //these here help in giving side animation of moving
+            transition: all 1s ease;
+        }
+    }
+}

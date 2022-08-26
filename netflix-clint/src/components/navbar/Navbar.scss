@@ -1,0 +1,103 @@
+@import "../../App.scss";
+
+.navbar{
+    color: azure;
+    font-size: 14px;
+    width: 100%;
+    //fix navbar
+    position: fixed;
+    top: 0;
+    //to not set element over these navbar
+    z-index: 999;
+    //when putting image in home background we wnt linear efect
+    background-color: linear-gradient(to top, transparent 0%,rgb(0,0,0,0.3) 50%);
+
+
+    //use when scroll of page is done
+    &.scrolled{
+        background-color: #0b0b0b;
+    }
+
+    .container{
+        padding: 0px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+
+        .left{
+            display: flex;
+            align-items: center;
+
+            img{
+                height: 45px;
+                width: 100px;
+                margin-right: 40px;
+
+                @include mobile{
+                    display: none;
+                }
+            }
+
+            span{
+                margin-right: 40px;
+                cursor: pointer;
+
+                @include tablet{   //for tablet view
+                    display: none;
+                }
+
+                &.includeInMt{   // & sign because it not child it class define in span
+                    @include tablet{
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .right{
+            display: flex;
+            align-items: center;
+            
+
+            img{
+                height: 25px;
+                width: 25px;
+                border-radius: 5px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            .icon{
+                margin: 0px 15px;
+                cursor: pointer;
+            }
+
+            .profile{
+                .options{
+                    display: none;   
+                    background-color: #0b0b0b;      
+                    border-radius: 5px;           
+                }
+
+                span{
+                    padding: 10px;
+                    cursor: pointer;
+                }
+               
+                //sudo class ..when we hover over here below style will execute
+                &:hover{
+                    .options{
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                    }
+                }
+            }
+
+        }
+    }
+    
+}
+
+
