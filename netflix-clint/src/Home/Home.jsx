@@ -14,17 +14,16 @@ function Home({ type }) {
       //we dont have to use http://localhost:8800/backend/       bcus we have proxy already in a packege json file
       //here we are saying these in axios get method = lists?type=movies&genre=comedy
       //${type ? "?type=" + type : ""}
-      //After that we are setting verify JWT METHOD
+    
       try {
         const respo = await axios.get(
           `lists${type ? "?type=" + type : ""}${
             genres !== null ? "&genre=" + genres : ""
           }`,
           {
-            headers: {
-              token:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDA2MzVkNjcxNzRmNzJmNjgxZjdkNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MTI2MzQyMSwiZXhwIjoxNjYxNjk1NDIxfQ.g3Sh2LQxqedfinBMbK6ELaFOvnbBKfyVJPyxCAeR1RQ",
-            },
+           headers: {
+            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+          },
           }
         );
 
